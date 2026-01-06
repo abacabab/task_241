@@ -92,3 +92,74 @@ groupadd no_access_group
 ```bash
 systemctl restart smb nmb
 ```
+
+## Демонстрация
+создал ещё одну ВМ (клон уже существующей)
+![post](image%20other%20pc.PNG)
+
+### public
+Подключение к public без пароля
+
+![post](image%20enter%20as%20a%20guest.PNG)
+
+Подключение через пользователя с паролем:
+
+![post](image%20samba%20demonstration.PNG)
+
+Попытка записи:
+
+![post](put%20file%20access%20denied.PNG)
+
+Попытка чтения:
+
+![post](get%20command%20in%20public%20folder.PNG)
+
+### private
+Попытка подключения к private без пароля:
+
+![post](private%20guest%20denied.PNG)
+
+Подключение с паролем:
+
+![post](private%20enter%20with%20user.PNG)
+
+Подключение к неразрешенному пользователю:
+
+![post](private%20other%20user%20denied.PNG)
+
+### group_share
+Попытка подключения к group_share без пароля:
+
+![post](group_share%20guest%20denied.PNG)
+
+Подключения с паролем:
+
+![post](enter%20group_share%20as%20the%20right%20user.PNG)
+
+Подключение к пользователю без нужной группы:
+
+![post](other%20user%20group%20share%20denied.PNG)
+
+группы:
+![post](users%20groups.PNG)
+
+### multi_group
+Попытка подключения к пользователю, находящемуся в группе без прав доступа:
+
+![post](poor%20user%20denied.PNG)
+
+Подключение к пользователю в группе с правами на чтение и запись, попытка записи:
+
+![post](user_with_access%20put.PNG)
+
+Подключение к пользователю в группе с правами только на чтение:
+
+![post](readonly%20group%20enter.PNG)
+
+Попытка записи пользователем с правами только на чтение:
+
+![post](user_readonly%20put%20denied.PNG)
+
+группы:
+
+![post](users%20access%20groups.PNG)
